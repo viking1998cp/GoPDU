@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HistoryCustomerFragment">
+<TextView
+    android:layout_margin="15dp"
+    android:text="Lịch sử chuyến đi"
+    android:textSize="40dp"
+    android:fontFamily="@font/myriadproregular"
+    android:textStyle="bold"
+    android:textColor="#000000"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <ListView
+        android:layout_marginBottom="60dp"
+        android:id="@+id/lvHistory"
+        android:scrollbars="none"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+</LinearLayout>

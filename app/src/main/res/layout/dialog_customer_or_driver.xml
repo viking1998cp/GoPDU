@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="250dp">
+    <LinearLayout
+        android:padding="10dp"
+        android:background="@drawable/background"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="270dp">
+        <TextView
+            android:id="@+id/tvNhapso"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:fontFamily="@font/myriadprobold"
+            android:textColor="#d73b64"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Lựa chọn chức năng sử dụng"/>
+        <androidx.viewpager.widget.ViewPager
+
+            android:id="@+id/viewPagerChoose"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        </androidx.viewpager.widget.ViewPager>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayoutCustomerOrDriver"
+            app:tabIndicatorColor="#F05681"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="#FFFFFF"
+            app:tabTextColor="#000000"
+            app:tabIndicatorHeight="2pt"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+        </com.google.android.material.tabs.TabLayout>
+        <Button
+            android:id="@+id/btnSelect"
+            android:textSize="30sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/agencyr"
+            android:background="#038FB5"
+            android:text="SELECT"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+    </LinearLayout>
+</LinearLayout>

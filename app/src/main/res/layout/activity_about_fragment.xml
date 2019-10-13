@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:background="#51A8A7A5"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.AboutFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:background="#FFFFFFFF"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:weightSum="4"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_weight="3"
+                    android:textSize="10sp"
+                    android:text="thắng"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="Chỉnh sửa"
+                    android:textColor="#22B14C"
+                    android:gravity="right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <TextView
+                android:text="12/081998"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="+84389512898"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:weightSum="6"
+
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/ic_dieukhoan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp" />
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_dieukhoan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp" />
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_dieukhoan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp" />
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_dieukhoan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:background="#FFFFFF"
+
+                    android:text="ĐIỀU KHOẢN VÀ DỊCH VỤ"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:background="#FFFFFF"
+                    android:layout_marginTop="5dp"
+                    android:text="CHÍNH SÁCH BẢO MẬT"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:background="#FFFFFF"
+                    android:layout_marginTop="5dp"
+                    android:text="QUY CHẾ"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:background="#FFFFFF"
+                    android:layout_marginTop="5dp"
+                    android:text="GIỚI THIỆU VỀ CHÚNG TÔI"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnLogOut"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:text="Đăng xuất"
+            android:textColor="#ED1C24"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

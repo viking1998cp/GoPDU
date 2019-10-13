@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@drawable/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.VerifyPhoneNumberLogin">
+
+    <com.mukesh.OtpView
+        android:layout_centerInParent="true"
+        android:id="@+id/otp_view"
+        android:textSize="30sp"
+        android:inputType="number"
+        android:fontFamily="@font/myriadproregular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:itemBackground="#d73b64"
+        android:textColor="@android:color/white"
+        app:itemCount="6"
+        app:lineColor="@color/colorPrimary"
+        />
+    <Button
+        android:id="@+id/btnComfirm"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/agencyr"
+        android:background="#038FB5"
+        android:layout_alignParentBottom="true"
+        android:text="COMFIRM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

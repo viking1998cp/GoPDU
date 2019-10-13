@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GoPDU</string>
+    <string name="title">Dùng số điện thoại \n Để sử dụng ứng dụng Go-PDU</string>
+    <string name="title_activity_driver_maps">Map</string>
+    <string name="Register"> Mã xác nhận đã được gửi đến số điện thoại \n</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_CustomerMap"> Đặt chuyến đi </string>
+    <string name="title_History"> Hoạt động </string>
+    <string name="title_programfile">Tài khoản</string>
+</resources>

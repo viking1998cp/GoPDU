@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LoginActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/rockb"
+            android:textSize="40dp"
+            android:text="Go-PDU"
+            android:layout_marginBottom="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/segoepr"
+            android:textSize="30sp"
+            android:text="by manhthang516"
+            android:layout_marginBottom="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_logo"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="bottom"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btnSign"
+            android:textSize="30sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/agencyr"
+            android:background="#038FB5"
+            android:text="SIGN IN"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="70dp" />
+        <Button
+            android:id="@+id/btnRegister"
+            android:textSize="30sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/agencyr"
+            android:background="#d73b64"
+            android:text="REGISTER"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="70dp" />
+    </LinearLayout>
+</LinearLayout>

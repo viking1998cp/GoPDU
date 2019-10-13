@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.SettingCustomerFragment">
+    <androidx.appcompat.widget.Toolbar
+        android:background="@drawable/dobong"
+        app:title="Register Driver Account"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/imvDriverAvatar"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_female"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:textSize="14sp"
+                    android:fontFamily="@font/myriadproregular"
+                    android:id="@+id/editName"
+                    android:inputType="text"
+                    android:hint="Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:textSize="14sp"
+                    android:fontFamily="@font/myriadproregular"
+                    android:id="@+id/editBirthdate"
+                    android:inputType="textPersonName"
+                    android:hint="birthdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:fontFamily="@font/myriadproregular"
+                android:textColor="#F05681"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"/>
+            <RadioGroup
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:id="@+id/radioGroupGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/rdMale"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/myriadproregular"
+                    android:layout_marginRight="20dp"
+                    android:text="Male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/rdFemale"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/myriadproregular"
+                    android:text="Female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:textSize="14sp"
+                    android:fontFamily="@font/myriadproregular"
+                    android:id="@+id/editPhone"
+                    android:inputType="number"
+                    android:hint="Phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:fontFamily="@font/myriadproregular"
+                android:textColor="#F05681"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type of transportation"/>
+            <RadioGroup
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:id="@+id/radioGroupService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/rdBike"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/myriadproregular"
+                    android:layout_marginRight="20dp"
+                    android:text="Bike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/rdCar"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/myriadproregular"
+                    android:layout_marginRight="20dp"
+                    android:text="Car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/rdCarPlus"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/myriadproregular"
+                    android:layout_marginRight="20dp"
+                    android:text="Car Plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+            <Button
+                android:textSize="18sp"
+                android:fontFamily="@font/myriadproregular"
+                android:layout_marginTop="20dp"
+                android:id="@+id/btnRegister"
+                android:text="Register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F05681"/>
+            <Button
+                android:textSize="18sp"
+                android:fontFamily="@font/myriadproregular"
+                android:layout_marginTop="20dp"
+                android:id="@+id/btnBack"
+                android:text="Back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#038FB5"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
