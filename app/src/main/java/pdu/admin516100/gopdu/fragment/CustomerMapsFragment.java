@@ -119,6 +119,7 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
     private TextView tvDriverName, tvDriverNumber, tvDriverGender, tvPrice;
     private RatingBar ratingBar;
     private RadioButton rdMoney, rdPayment;
+    //Id khách hàng
     private String userId;
     private TabLayout tabLayout;
     private Button btnCall;
@@ -126,14 +127,21 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
     private GoogleMap mMap;
     GoogleApiClient mGoogleApiClient;
     private SupportMapFragment mMapFragment;
+    //request location
     LocationRequest mLocationRequest;
+    //Vị trí tài xế
     private Marker driverMarker;
+    //VỊ trí hiện tại
     Location mLastLocation;
+    //Trạng thái tìm kiếm tài xế
     private Boolean requestBoolena = false;
+    //Trạng thái chuyến đi
     private String statusTrip;
     private Marker pickupMarker;
     SupportMapFragment mapFragment;
+    //Tọa độ điểm đón, điểm đến
     private LatLng pickuplocation, destinationLalng;
+    //Tên điểm đến
     private String destination;
     private int requestService = 1;
     private Marker destinationMarker;
@@ -248,8 +256,6 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
 
     private void anhxa() {
 
-
-
         tabLayout = view.findViewById(R.id.tablayoutCustomerMap);
         viewPager = view.findViewById(R.id.viewPagerCustomerMap);
 
@@ -313,8 +319,8 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(1000);
-        mLocationRequest.setFastestInterval(1000);
+        mLocationRequest.setInterval(3000);
+        mLocationRequest.setFastestInterval(3000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
         if (ActivityCompat.checkSelfPermission(view.getContext(), android.Manifest.permission.ACCESS_FINE_LOCATION)
@@ -490,8 +496,8 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
                         driverFoundId = map.get("driverRideId").toString();
                         driverFound = true;
                         getHasRideEnded();
-                        laythongtintaixe();
-                        getDriverlocation();
+                        pickInfomationDriver();
+                        pickDriverlocation();
                     }
 
                     Double destinationLat = 0.0;
@@ -783,7 +789,7 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
 
             pickupMarker = mMap.addMarker(new MarkerOptions().position(pickuplocation).title("Đón tôi ở đây").icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_pickup)));
             btnCall.setText("Đang tìm tài xế cho bạn......");
-            laytaixe();
+            pickDriver();
 
         }
     }
@@ -793,7 +799,7 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
     private String driverFoundId;
     GeoQuery geoQuery;
 
-    private void laytaixe() {
+    private void pickDriver() {
         DatabaseReference driverLocation = FirebaseDatabase.getInstance().getReference().child("driversAvailable");
         GeoFire geoFire = new GeoFire(driverLocation);
         geoQuery = geoFire.queryAtLocation(new GeoLocation(pickuplocation.latitude, pickuplocation.longitude), radius);
@@ -836,8 +842,8 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
                                     hashMapCustomer.put("status", "pickup");
                                     customerRef.updateChildren(hashMapCustomer);
                                     btnCall.setText("Xác định địa điểm của tài xế...");
-                                    laythongtintaixe();
-                                    getDriverlocation();
+                                    pickInfomationDriver();
+                                    pickDriverlocation();
                                     getHasRideEnded();
                                     Log.d("BBB", "onKeyEntered: " + customerId);
                                 }
@@ -867,7 +873,7 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
             public void onGeoQueryReady() {
                 if (driverFound == false && requestBoolena) {
                     radius++;
-                    laytaixe();
+                    pickDriver();
                     Log.d("BBB", "onGeoQueryReady: " + radius + "");
                 }
             }
@@ -882,7 +888,8 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
     private DatabaseReference driverlocationRef;
     private ValueEventListener driverlocationRefListener;
 
-    public void getDriverlocation() {
+    // Lấy vị trí tài xế
+    public void pickDriverlocation() {
         ln_DriverInfo.setVisibility(View.VISIBLE);
         lnCallUber.setVisibility(View.GONE);
         driverlocationRef = FirebaseDatabase.getInstance().getReference().child("driverWorking").child(driverFoundId).child("l");
@@ -918,8 +925,8 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
         });
 
     }
-
-    private void laythongtintaixe() {
+    //Lấy vị thông tin tài xế
+    private void pickInfomationDriver() {
 
         DatabaseReference customerDatabase = FirebaseDatabase.getInstance().getReference().child("User").child("Driver").child(driverFoundId);
         customerDatabase.addValueEventListener(new ValueEventListener() {
@@ -986,7 +993,6 @@ public class CustomerMapsFragment extends Fragment implements OnMapReadyCallback
 
                             } else {
                                 statusTrip = "";
-
                             }
                             endRide();
                         }
